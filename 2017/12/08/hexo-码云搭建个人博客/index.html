@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="#{config.language}"><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Excessive strength gives easy access to fracturing"><title>hexo+码云搭建个人博客 | 易折</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">hexo+码云搭建个人博客</h1><a id="logo" href="/.">易折</a><p class="description">Excessive strength gives easy access to fracturing</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">hexo+码云搭建个人博客</h1><div class="post-meta">Dec 8, 2017<span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" href="/2017/12/08/hexo-码云搭建个人博客/#vcomment"><span class="valine-comment-count" data-xid="/2017/12/08/hexo-码云搭建个人博客/"></span><span>条评论</span></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境配置"><span class="toc-number">1.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装HEXO"><span class="toc-number">2.</span> <span class="toc-text">安装HEXO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建"><span class="toc-number">3.</span> <span class="toc-text">搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地搭建"><span class="toc-number">4.</span> <span class="toc-text">本地搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署码云"><span class="toc-number">5.</span> <span class="toc-text">部署码云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网站部署"><span class="toc-number">6.</span> <span class="toc-text">网站部署</span></a></li></ol></div></div><div class="post-content"><p>最近在找资料的时候，看到很多人都搭建了自己的博客，所以有点兴趣，一是为了提升自己的写作，二是为了改变一下习惯给自己做一个记录和总结，至少在大学有点东西，于是在查找资料后发现有两种搭建的方法。</p>
+<blockquote>
+<ul>
+<li>VPS + WORDPRESS</li>
+<li>GITHUB + HEXO</li>
+</ul>
+</blockquote>
+<p>第一种方法需要一个VPS和域名，VPS本来我是想用搬瓦工最低配那个配置进行搭建不过想到那个VPS位置在美国访问可能有点慢，还有就是VPS和域名续费，作为一个学生党当然是选择一个便宜的啦！！</p>
+<p>所以我选择了第二种方案。<br>由于github是国外的，在国内访问的时候可能会有点问题所以我选择 码云+hexo</p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>首先我们要配置环境</p>
+<blockquote>
+<ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a> </li>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">GIT</a></li>
+</ul>
+</blockquote>
+<p>这两个软件一路点下去就行了。<br>还有你要注册一个码云的帐号，是用来上传你HEXO的静态网页的。</p>
+<h2 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h2><p>打开命令提示符，输入</p>
+<blockquote>
+<p>npm install hexo-cli -g</p>
+</blockquote>
+<p>这里说明一下，NPM是随同NodeJS一起安装的包管理工具，由于NPM的服务器是在国外的，下载安装HEXO在一些地区由于网络原因会出现问题，所以可以选择NPM镜像。</p>
+<p><a href="http://npm.taobao.org/" target="_blank" rel="noopener">淘宝 npm 地址</a><br>临时使用只要在安装前在命令提示符打入如下</p>
+<blockquote>
+<p>npm –registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a> install express</p>
+</blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm99emnjmpj20ik0f3dg3.jpg" alt="安装完后就是这样的"></p>
+<p>安装完后就是这样的(这里稍微用了一下网上的截图由于我已经装好了没办法重现了）</p>
+<p>接着说，安装完后输入命令</p>
+<blockquote>
+<p>hexo </p>
+</blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm99enwijdj20ig0qzaal.jpg" alt=""><br>显示这样就是安装成功了</p>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>在随便什么地方创建一个文件夹，右键文件夹码，点击Git Bash,会出现一个黑窗口    </p>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm99enfhxqj20ga08tjr8.jpg" alt=""></p>
+<p>输入命令：</p>
+<blockquote>
+<p>npm install -g hexo-cli</p>
+</blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm99enlxkzj20ga08taa2.jpg" alt=""></p>
+<p>在输入命令初始化HEXO：</p>
+<blockquote>
+<p>hexo init</p>
+</blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm99emrwyfj20ga0l53z1.jpg" alt=""></p>
+<p>打开文件夹可以看一下是否初始化成功</p>
+<h2 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h2><p>输入命令生成静态文件：</p>
+<blockquote>
+<p>hexo g</p>
+</blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm99en7ybgj20gc0cg0sy.jpg" alt=""></p>
+<p>成功后启动本地服务器：</p>
+<blockquote>
+<p>hexo s</p>
+</blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm99yrqjcgj20g7023742.jpg" alt=""><br>这样就成功了 在地址栏访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 可以了</p>
+<h2 id="部署码云"><a href="#部署码云" class="headerlink" title="部署码云"></a>部署码云</h2><p>我们先创建一个项目：<br><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm9a4g3yvhj20me0br788.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm9a5okmvsj20mn0kd75n.jpg" alt=""></p>
+<p>然后点击进入你创建的项目</p>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm9a98uo6wj20ti0cy42o.jpg" alt=""></p>
+<p>然后修改你的配置文件 _config.yml    在根目录<br>修改你的deploy 的值并保存</p>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm9aiik89nj20nq067glw.jpg" alt=""><br>这里根据你个人来修改，URL部分一定要修改不然会出现本地部署成功但是码云上缺失CSS的问题</p>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm9aboqxhoj20eg03vq30.jpg" alt=""></p>
+<p>然后右键文件夹 Git Bash 输入</p>
+<blockquote>
+<p>$ git config –global user.name空格+你的码云的名字<br>$ git config –global user.email空格+你的码云的邮箱</p>
+</blockquote>
+<p>然后运行</p>
+<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+<p>注意这里如果出错或者时间很长也需要用NPM镜像</p>
+<p>成功后输入命令进行部署:</p>
+<blockquote>
+<p>hexo deploy</p>
+</blockquote>
+<p>之后会弹出一个输入帐号密码的窗口，输入你注册的码云的帐号和密码就行了</p>
+<h2 id="网站部署"><a href="#网站部署" class="headerlink" title="网站部署"></a>网站部署</h2><p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm9al24mgyj20j009haay.jpg" alt=""></p>
+<p>点启动服务就好了。<br>到这里你的网站就部署好了。</p>
+<p><img src="https://ws1.sinaimg.cn/large/6d86f0c7ly1fm9anp6721j20tl04wjrp.jpg" alt=""></p>
+<p>点击连接那个就是你的博客了，是不是很快就可以拥有一个自己的博客？<br>关于写作部分以后再写。</p>
+</div><div class="tags"><a href="/tags/博客/">博客</a><a href="/tags/教程/">教程</a></div><div class="post-nav"><a class="pre" href="/2017/12/09/github-page绑定专属域名/">github page绑定专属域名</a></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'XUjCSn13kry9xrSIdiqxGn5s-gzGzoHsz',
+  appKey:'EAf85tAytsVT5pCXuVnLrWyk',
+  placeholder:'Just so so',
+  avatar:'retro',
+  guest_info:guest_info,
+  pageSize:'5'
+})</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"><input type="hidden" name="si" value="#{config.url}"><input name="tn" type="hidden" value="bds"><input name="cl" type="hidden" value="3"><input name="ct" type="hidden" value="2097152"><input name="s" type="hidden" value="on"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/博客/" style="font-size: 15px;">博客</a> <a href="/tags/域名/" style="font-size: 15px;">域名</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/教程/" style="font-size: 15px;">教程</a> <a href="/tags/数据结构/" style="font-size: 15px;">-数据结构</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/05/使用frm和idb文件恢复mysql数据库/">使用frm和ibd文件恢复mysql数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/05/二叉树的遍历/">二叉树的遍历</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/github+coding双线部署hexo/">github+coding双线部署hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/09/github-page绑定专属域名/">github page绑定专属域名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/08/hexo-码云搭建个人博客/">hexo+码云搭建个人博客</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.baidu.com/" title="百度" target="_blank">百度</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer"></div>Total<span id="busuanzi_container_site_pv"><span> </span><span rel="nofollow" id="busuanzi_value_site_pv"></span><span rel="nofollow">  hits, </span></span><span id="busuanzi_container_site_uv"><span rel="nofollow" id="busuanzi_value_site_uv"></span><span rel="nofollow">  vistors.</span></span>© <a href="/." rel="nofollow">易折.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a><p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a9003ad4a611262e9467743ead3dda3b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
